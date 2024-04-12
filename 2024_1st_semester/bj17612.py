@@ -11,7 +11,7 @@
 # (1) 최소힙 사용해서 가장 (작은 시간, 작은 카운터 번호)를 알아낸다.
 # (2) (1)의 순서대로 (짧은 시간, 큰 인덱스, 현재 사람순서) 로 넣는다.
 
-# 예시)
+# 예시) 
 # ID = [123, 21, 34, 56, 45, 723, 55, 13, 910, 73]
 # WE = [  4,  5, 14,  1,  7,   5,  7,  5,  10,  3]
 
@@ -63,7 +63,7 @@ cnt = [] # 2차원 배열 index 0 => 시간, 1 => 카운터 숫자
 for i in range(m):
     heappush(cnt , (0, i))
 
-cash = [0] * k # 각 계산대의 시간
+cash = [0] * m # 각 계산대의 시간
 
 ans = 0
 q = [] #퇴장 순서 배열
@@ -71,16 +71,11 @@ for i in range(n):
     t, x = heappop(cnt)
     cash[x] += we[i]
     heappush(cnt, (cash[x], x))
-    q.append((cash[x], -x, i))
+    heappush(q, (cash[x], -x, i))
+    
 
-cnt = 1
-for i in range(n):
-    print(f'id = {q[i]}')
-    print(f'cu = {cu[q[i][2]]}')
-    ans += (cu[q[i][2]] * cnt)
-    print(f'sum = {cu[q[i][2]] * cnt}')
-    print(f'ans = {ans}')
-
-    cnt += 1
+for i in range(1, n+1):
+    _, _, tmp = heappop(q)
+    ans += (i * cu[tmp])
 
 print(ans)
