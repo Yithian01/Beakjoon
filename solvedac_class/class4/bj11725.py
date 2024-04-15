@@ -1,3 +1,4 @@
+# 주소 = "https://www.acmicpc.net/problem/11725"
 # 트리이므로 사이클 없다.
 # 시간 복잡도 계산: O(VE)? 10^5*10^5 => 10^10 이거 틀릴 것 같다.
 import sys
