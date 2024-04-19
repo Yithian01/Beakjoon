@@ -1,4 +1,8 @@
-from heapq import heappop, heappush
+# (1) BFS 사용해서 연결된 구역을 구한다. ( 중간 제외 )
+# (2) [연결된 구역 개수] + [정렬된 구역] 
+# (3) (2)과 주어진 것 비교한다.
+
+# 시간 복잡도 계산 : 9 * tc * 8 => 10^2 * 10 => 10^3 
 import sys
 input = sys.stdin.readline
 dir = [(-1,0),(1,0),(0,-1),(0,1)]
