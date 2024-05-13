@@ -17,3 +17,6 @@ def dfs(money, cnt):
     vi[money] = cnt
 
     if coin[0] >=
+
+
+    dsdasd
