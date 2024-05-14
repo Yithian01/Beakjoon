@@ -1,4 +1,5 @@
 import sys
 input = sys.stdin.readline
 
-print('ss')
+
+n, m = map(int, input().split())

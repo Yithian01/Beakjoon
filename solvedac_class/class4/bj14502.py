@@ -1,3 +1,6 @@
+# 재귀를 통해 벽을 3개 세워주고 
+
+#
 # 시간복잡도 계산 : (8! - 5!) * 64 + 64 => O(NM) 
 from collections import deque
 import sys
