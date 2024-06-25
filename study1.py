@@ -1,21 +1,19 @@
 import sys
+input = sys.stdin.readline
 
-T = int(sys.stdin.readline())
+ans = 0
+q = []
+n = int(input())
+for _ in range(n):
+    a, b = map(int, input().split())
+    if b == 0:
+       ans += len(q)
+       q = []
 
-for i in range(T):
-    stack = []
-    s = input()
-    for j in s:
-        if j == "(":
-            stack.append(j)
-        elif j == ")":
-            if stack:
-                stack.pop()
-            else:
-                print("NO")
-                break
     else:
-        if stack:
-            print("No")
-        else:
-            print("YES")
+        if b not in q:
+            q.append(b)
+
+
+ans += len(q)
+print(ans)
