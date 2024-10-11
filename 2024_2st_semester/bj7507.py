@@ -1,8 +1,11 @@
+# 시간 복잡도 : TC * N log N * 2 + N
+# 5 * 10^6 + 5 * 10^4
 from heapq import heappush, heappop
 import sys
 input = sys.stdin.readline
 INF = 10000
 s = "Scenario #"
+
 
 for i in range(int(input())):
     q = []
