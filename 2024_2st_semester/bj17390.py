@@ -14,4 +14,3 @@ for i in range(2, n+1):
 for _ in range(m):
     st, ed = map(int, input().split())
     print( dp[ed] - dp[st-1])
-
