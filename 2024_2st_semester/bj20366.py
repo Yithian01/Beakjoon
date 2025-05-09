@@ -10,7 +10,29 @@ INF = sys.maxsize
     조합? -> 시간초과 
     브루트포스 -> 시간 초과 4중 for문으로 하면 터짐
 
-    절반을 나누고 그 절반끼리 매칭
+    
+    투 포인터: outer, inner를 잡는다. 
+        outer = [0, 3]
+        inner = [1, 2]
+
+        outer의 차이는 3차이가 난다.
+        i = 0 ~ n-3   시작
+        j = i+3 ~ n   끝 
+
+        inner는 outer의 내부를 투포인터로 탐색 
+        le = i+1
+        ri = j-1
+        
+        눈사람A = i+j    ( out )
+        눈사람B = le+ri  ( in)
+        
+        정렬했을 경우 오른쪽으로 갈수록 크기가 커진다.
+        if out > in 이라면 in을 키워야 하므로 le += 1
+        if out < in 이라면 in을 작게해야 하므로 ri -= 1
+
+    
+    시간복잡도 계산: O(N LogN) 정도
+
 
 '''
 n = int(input())
